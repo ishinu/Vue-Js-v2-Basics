@@ -9,70 +9,37 @@
     </head>
     <body class="h-full grid place-items-center">
         <div id="root">
-            <h1 class="font-bold mb-3 text-3xl">All Tasks</h1>
-            <!-- <h1 v-text="reversedMessage"> {{ reversedMessage }} </h1> -->
-            <!-- <input type="text" v-model="message"> -->
-
-            <ul class="text-xl">
-                <li v-for="task in tasks">
-                    <!-- {{ task }}  -->
-                    {{ task.description }} 
-                </li>
-            </ul>
-
-            <h1 class="font-bold my-3 text-3xl">All Tasks</h1>
-            <!-- <h1 v-text="reversedMessage"> {{ reversedMessage }} </h1> -->
-            <!-- <input type="text" v-model="message"> -->
-
-            <ul class="text-xl">
-                <li v-for="task in tasks" v-if="task.completed">
-                    <!-- {{ task }}  -->
-                    {{ task.description }} 
-                </li>
-            </ul>
-
-            <h1 class="font-bold my-3 text-3xl">Incompleted Tasks</h1>
-            <!-- <h1 v-text="reversedMessage"> {{ reversedMessage }} </h1> -->
-            <!-- <input type="text" v-model="message"> -->
-
-            <ul class="text-xl">
-                <li v-for="task in inCompletedTasks" v-text="task.description">
-                    <!-- {{ task }}  -->
-                    {{ task.description }} 
-                </li>
-            </ul>
+           <task-list></task-list>
         </div>
+        <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+        <!-- <script src="main.js"></script> -->
+        <script src="main2.js"></script>
     </body>
-    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
-    <script>
-        let app = new Vue({
-            el: "#root",
-            data:{
-                // message :'Hello there!'
-                tasks: [
-                    { description : 'First Task', completed: true },
-                    { description : 'Second Task', completed: false },
-                    { description : 'Third Task', completed: true },
-                    { description : 'Fourth Task', completed: false },
-                    { description : 'Fifth Task', completed: true }
-                ]
-            },
-            methods : {
-                
-            },
-            computed : {
-                // reversedMessage () {
-                //     return this.message.split('').reverse().join('')
-                // }
-
-                inCompletedTasks(){
-                    return this.tasks.filter(task => !task.completed);
-
-                    // this.tasks.filter(function (task) {
-                    //     return ! task.completed;
-                    // })
-                }
+    <!-- <script>
+        Vue.component('task-list',{
+            template : `
+                <div>
+                    <task v-for ="task in tasks">{{ task.task }}</task>
+                </div>
+            `,
+            data(){
+                return{
+                    tasks : [
+                        { task : 'Go to the Store', complete : true },
+                        { task : 'Go to the Bank', complete : false },
+                        { task : 'Go to the School', complete : true },
+                        { task : 'Go to the Jungle', complete : false }
+                    ]
+                };
             }
-        })
-    </script>
+        });
+
+        Vue.component('task',{
+            template :  '<li><slot></slot></li>'
+        });
+
+        new Vue({
+            el:'#root'
+        });
+    </script> -->
 </html>
