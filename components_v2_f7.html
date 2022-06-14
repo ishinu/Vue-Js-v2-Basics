@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <title>Vue Js Implementation</title>
+        <style>
+           
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="h-full grid place-items-center">
+        <div id="root">
+           <task-list></task-list>
+        </div>
+        <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+        <!-- <script src="main.js"></script> -->
+        <script src="main2.js"></script>
+    </body>
+    <!-- <script>
+        Vue.component('task-list',{
+            template : `
+                <div>
+                    <task v-for ="task in tasks">{{ task.task }}</task>
+                </div>
+            `,
+            data(){
+                return{
+                    tasks : [
+                        { task : 'Go to the Store', complete : true },
+                        { task : 'Go to the Bank', complete : false },
+                        { task : 'Go to the School', complete : true },
+                        { task : 'Go to the Jungle', complete : false }
+                    ]
+                };
+            }
+        });
+
+        Vue.component('task',{
+            template :  '<li><slot></slot></li>'
+        });
+
+        new Vue({
+            el:'#root'
+        });
+    </script> -->
+</html>
